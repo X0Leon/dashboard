@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 
-# built-in package
 import json
 import time
 
-# third-party package
 from flask import render_template, make_response, request, redirect
 from flask_restful import Resource
 
-# user-defined package
 from dashboard import r_db, config
 from ..utils import build_response
 
 
 class Home(Resource):
-    """home page
+    """
+    Home Page
 
-    Just render the home template, and then js will fetch data from server
+    Just render the home template, then js will fetch data from redis server
     to build the list or other things.
 
     Attributes:
@@ -57,7 +55,8 @@ class Home(Resource):
 
 
 class DashListData(Resource):
-    """Get dashboard list.
+    """
+    Get dashboard list.
 
     Get the dashboard list with meta information, which is used for rendering
     kinds of `current dashboard list` page.
@@ -70,7 +69,8 @@ class DashListData(Resource):
     Attributes:
     """
     def get(self, page=0, size=10):
-        """Get dashboard meta info from in page `page` and page size is `size`.
+        """
+        Get dashboard meta info from in page `page` and page size is `size`.
 
         Args:
             page: page number.

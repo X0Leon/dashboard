@@ -1,29 +1,28 @@
 # -*- coding: utf-8 -*-
 
-# built-in package
 import time
 import json
 import random
 import hashlib
 
-# third-party package
 from flask import request, make_response, render_template, redirect
 from flask_restful import Resource
 
-# user-defined package
 from dashboard import r_db, config
 from ..utils import build_response, print_info
 
 
 class Dash(Resource):
-    """Dashboard html render.
+    """
+    Dashboard html render.
 
-    return the dashboard id, let js do the other work.
+    return the dashboard id, let js do other work.
 
     Attributes:
     """
     def get(self, dash_id):
-        """Just return the dashboard id in the rendering html.
+        """
+        Just return the dashboard id in the rendering html.
 
         JS will do other work [ajax and rendering] according to the dash_id.
 
@@ -37,14 +36,16 @@ class Dash(Resource):
 
 
 class DashData(Resource):
-    """Dashboard meta/content CRUD operation.
+    """
+    Dashboard meta/content CRUD operation.
 
     Create, read, update and delete dash operation.
 
     Attributes:
     """
     def get(self, dash_id):
-        """Read dashboard content.
+        """
+        Read dashboard content.
 
         Args:
             dash_id: dashboard id.
@@ -56,7 +57,8 @@ class DashData(Resource):
         return build_response(dict(data=data, code=200))
 
     def put(self, dash_id=0):
-        """Update a dash meta and content, return updated dash content.
+        """
+        Update a dash meta and content, return updated dash content.
 
         Args:
             dash_id: dashboard id.
@@ -69,9 +71,10 @@ class DashData(Resource):
         return build_response(dict(data=updated, code=200))
 
     def delete(self, dash_id):
-        """Delete a dash meta and content, return updated dash content.
+        """
+        Delete a dash meta and content, return updated dash content.
 
-        Actually, just remove it to a specfied place in database.
+        Actually, just remove it from a specified place in database.
 
         Args:
             dash_id: dashboard id.

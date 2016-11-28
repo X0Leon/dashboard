@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
-# built-in package
 import time
 import json
 import random
 import hashlib
 
-# third-party package
 import sqlparse
 from pygments import highlight
 from pygments.lexers import SqlLexer
@@ -14,13 +12,13 @@ from pygments.formatters import HtmlFormatter
 from flask_restful import Resource
 from flask import request, make_response, render_template, redirect
 
-# user-defined package
 from dashboard import r_db, config
 from ..utils import build_response, print_info, SQL
 
 
 class Sql(Resource):
-    """sql html render.
+    """
+    sql html render.
 
     return the rendered sql template id
 
@@ -31,7 +29,8 @@ class Sql(Resource):
 
 
 class SqlData(Resource):
-    """sql executor.
+    """
+    sql executor.
 
     return the result of executed sql
 
@@ -73,9 +72,3 @@ class SqlData(Resource):
 
 
         pass
-
-
-
-
-
-##

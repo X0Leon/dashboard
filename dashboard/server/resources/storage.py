@@ -1,27 +1,26 @@
 # -*- coding: utf-8 -*-
 
-# built-in package
 import json
 
-# third-party package
 from flask_restful import Resource
 
-# user-defined package
 from dashboard import r_kv
 from ..utils import build_response
 
 
 class KeyList(Resource):
-    """Get the keys in database.
+    """
+    Get the keys in database.
 
     Return all the keys exist in database which are used to
-    store data for build table and visualization. I.E, those
+    store data for build table and visualization. i.e, those
     data shared by users in ipython.
 
     Attributes:
     """
     def get(self):
-        """Get key list in storage.
+        """
+        Get key list in storage.
         """
         keys = r_kv.keys()
         keys.sort()
@@ -29,10 +28,11 @@ class KeyList(Resource):
 
 
 class Key(Resource):
-    """Get the data of a key.
+    """
+    Get the data of a key.
 
     Get all the data of a key. Both Key and KeyList API has much to
-    implement in future to make it more useable. namely, auto-complete
+    implement in future to make it more usable. Namely, auto-complete
     for KeyList, and fetch part of data via a key for this API.
 
     Attributes:
