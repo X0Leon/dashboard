@@ -53,7 +53,7 @@ class DashData(Resource):
         Returns:
             A dict containing the content of that dashboard, not include the meta info.
         """
-        data = json.loads(r_db.hmget(config.DASH_CONTENT_KEY, dash_id)[0])
+        data = json.loads(r_db.hmget(config.DASH_CONTENT_KEY, dash_id)[0].decode('utf-8'))
         return build_response(dict(data=data, code=200))
 
     def put(self, dash_id=0):
@@ -95,10 +95,10 @@ class DashData(Resource):
     def _update_dash(self, dash_id, data):
         current_time = time.time()
 
-        meta = json.loads(r_db.hget(config.DASH_META_KEY, dash_id))
+        meta = json.loads(r_db.hget(config.DASH_META_KEY, dash_id).decode('utf-8'))
         meta.update({'name': '' + data['name'],
                      'time_modified': int(current_time)})
-        content = json.loads(r_db.hget(config.DASH_CONTENT_KEY, dash_id))
+        content = json.loads(r_db.hget(config.DASH_CONTENT_KEY, dash_id).decode('utf-8'))
         content.update(data)
 
         r_db.hset(config.DASH_META_KEY, dash_id, json.dumps(meta))

@@ -1,1 +1,1 @@
-from sender import *
+# -*- coding: utf-8 -*-

@@ -86,6 +86,6 @@ class DashListData(Resource):
         data = []
         if id_list:
             dash_meta = r_db.hmget(config.DASH_META_KEY, [i[0] for i in id_list])
-            data = [json.loads(i) for i in dash_meta]
+            data = [json.loads(i.decode('utf-8')) for i in dash_meta]
 
         return build_response(dict(data=data, code=200))

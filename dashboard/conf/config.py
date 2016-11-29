@@ -20,7 +20,7 @@ DASH_CONTENT_KEY = "dash_content"
 DASH_DELETED_KEY = "dash_deleted"
 
 # database
-sql_type = 'mysql'   # currently just support mysql
+sql_type = 'mysql'
 sql_host = 'localhost'
 sql_port = 3306
 sql_user = 'ipd'
@@ -41,6 +41,7 @@ def config_log():
     logger.error = error_log
 
     return logger
+
 logger = config_log()
 
 # env config

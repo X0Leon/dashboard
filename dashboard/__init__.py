@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import
 
 import copy
 
@@ -23,5 +22,5 @@ r_db = redis.Redis(host=config.redis_db_host, port=config.redis_db_port, db=conf
 log = config.logger
 
 
-from . import client
+from .client import sender
 from .server import views
