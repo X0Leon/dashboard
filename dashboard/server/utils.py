@@ -50,17 +50,17 @@ def print_func_name(func):
 
 class Map(dict):
     """
-    示例:
+    Example:
     m = Map({'first_name': 'Eduardo'}, last_name='Pool', age=24, sports=['Soccer'])
-    # 添加
+    # Add new key
     m.new_key = 'Hello world!'
     m['new_key'] = 'Hello world!'
     print(m.new_key)
     print(m['new_key'])
-    # 更新
+    # Update
     m.new_key = 'Yay!'
     m['new_key'] = 'Yay!'
-    # 删除
+    # Delete
     del m.new_key
     del m['new_key']
     """

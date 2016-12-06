@@ -9,9 +9,6 @@ from flask_restful import Api
 from .conf import config
 
 
-# app = Flask("__name__", static_folder="./static", template_folder="./templates")
-# app = Flask("dashboard", static_folder="./static", template_folder="./templates")
-# app = Flask("dashboard")
 app = Flask(__name__)
 api = Api(app)
 

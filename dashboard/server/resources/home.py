@@ -13,10 +13,8 @@ from ..utils import build_response
 class Home(Resource):
     """
     Home Page
-
     Just render the home template, then js will fetch data from redis server
     to build the list or other things.
-
     Attributes:
     """
     def get(self):
@@ -57,10 +55,8 @@ class Home(Resource):
 class DashListData(Resource):
     """
     Get dashboard list.
-
     Get the dashboard list with meta information, which is used for rendering
     kinds of `current dashboard list` page.
-
     DB structure:
     1. DASH_ID_KEY -> Sorted Set : time_modified -> dash_id
     2. DASH_META_KEY -> hash : dash_id -> dash meta info
@@ -71,11 +67,9 @@ class DashListData(Resource):
     def get(self, page=0, size=10):
         """
         Get dashboard meta info from in page `page` and page size is `size`.
-
         Args:
             page: page number.
             size: size number.
-
         Returns:
             list of dict containing the dash_id and accordingly meta info.
             maybe empty list [] when page * size > total dashes in db. that's reasonable.

@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 # redis as cache
 redis_kv_host = 'localhost'
@@ -19,14 +19,6 @@ DASH_META_KEY = "dash_meta"
 DASH_CONTENT_KEY = "dash_content"
 DASH_DELETED_KEY = "dash_deleted"
 
-# database
-sql_type = 'mysql'
-sql_host = 'localhost'
-sql_port = 3306
-sql_user = 'ipd'
-sql_pwd  = 'thanks'
-sql_db   = 'IPD_data'
-
 # logging
 def config_log():
     import logging
@@ -43,8 +35,3 @@ def config_log():
     return logger
 
 logger = config_log()
-
-# env config
-# 'dev' will use raw js/css files for debug use
-# 'prd' will use min js/css files
-# env = 'dev'
